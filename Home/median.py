@@ -1,4 +1,4 @@
-__author__ = 'motegi'
+__author__ = 'mokkeee'
 
 
 def checkio(data):

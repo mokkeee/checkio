@@ -1,4 +1,4 @@
-__author__ = 'motegi'
+__author__ = 'mokkeee'
 import string
 
 def is_contains(chk_data, contains_chars):
