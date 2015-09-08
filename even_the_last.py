@@ -4,16 +4,8 @@ def checkio(array):
     if len(array) == 0:
         return 0
 
-    """
-        sums even-indexes elements and multiply at the last
-    """
-    val = 0
-    for i in range(0, len(array), 2):
-        val += array[i]
+    return sum(array[0:len(array):2]) * array[-1]
 
-    val *= array[-1]
-
-    return val
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
