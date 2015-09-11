@@ -2,7 +2,8 @@ __author__ = 'mokkeee'
 
 
 def index_power(array, n):
-    if len(array) <= n : return -1
+    if len(array) <= n:
+        return -1
     return array[n] ** n
 
 
