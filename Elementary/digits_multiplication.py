@@ -2,13 +2,10 @@ __author__ = 'mokkeee'
 
 
 def checkio(number):
+    num_str = str(number).replace('0', '')
     multi_val = 1
-    while number > 0:
-        digit = int(number % 10)
-        number //= 10
-        if digit != 0:
-            multi_val *= digit
-
+    for x in num_str:
+        multi_val *= int(x)
     return multi_val
 
 
