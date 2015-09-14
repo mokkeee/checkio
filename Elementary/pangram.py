@@ -3,7 +3,7 @@ __author__ = 'mokkeee'
 import string
 
 def check_pangram(text):
-    lower_ascii_chars = sorted(set(filter(lambda x: x in string.ascii_lowercase, text.lower())))
+    lower_ascii_chars = sorted(set(filter(lambda x: x.isalpha(), text.lower())))
     return ''.join(lower_ascii_chars) == string.ascii_lowercase
 
 if __name__ == '__main__':
