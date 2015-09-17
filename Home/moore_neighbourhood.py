@@ -10,7 +10,6 @@ def is_enable(grid, row, col):
         return False
     return True
 
-
 def get_neighbour(grid, row, col):
     if not is_enable(grid, row, col):
         return None
@@ -19,12 +18,11 @@ def get_neighbour(grid, row, col):
 
 def count_neighbours(grid, row, col):
     neighbours = []
-    for i in range(col - 1, col + 2):
-        neighbours.append(get_neighbour(grid, row - 1, i))
-        neighbours.append(get_neighbour(grid, row + 1, i))
-
-    neighbours.append(get_neighbour(grid, row, col - 1))
-    neighbours.append(get_neighbour(grid, row, col + 1))
+    for r in range(row - 1, row + 2):
+        for c in range(col - 1, col + 2):
+            if r == row and c == col:
+                continue
+            neighbours.append(get_neighbour(grid, r, c))
 
     # print(neighbours)
     return neighbours.count(1)
