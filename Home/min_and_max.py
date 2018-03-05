@@ -2,17 +2,22 @@
 # -*- coding: utf-8 -*-
 
 
-def to_list(args):
-    if hasattr(args[0], '__iter__') and len(args) == 1:
-        l = list(args[0])
-    else:
-        l = list(args)
-    return l
+def find_target(args, key, reverse):
+    datum = args[0] if len(args) == 1 else args
+    return sorted(datum, key=key, reverse=reverse)[0]
 
 
-def min(*args, **kwargs):
+def min(*args, key=None):
+    return find_target(args, key, False)
+
+
+def max(*args, key=None):
+    return find_target(args, key, True)
+
+
+'''
+def min(*args, key=None):
     datum_list = to_list(args)
-    key = kwargs.get("key", None)
 
     min_val = datum_list[0]
     for i in range(1, len(datum_list)):
@@ -25,10 +30,8 @@ def min(*args, **kwargs):
                 min_val = val
     return min_val
 
-
-def max(*args, **kwargs):
+def max(*args, key=None):
     datum_list = to_list(args)
-    key = kwargs.get("key", None)
 
     max_val = datum_list[0]
     for i in range(1, len(datum_list)):
@@ -40,7 +43,7 @@ def max(*args, **kwargs):
             if key(max_val) < key(val):
                 max_val = val
     return max_val
-
+'''
 
 if __name__ == '__main__':
     # These "asserts" using only for self-checking and not necessary for auto-testing
